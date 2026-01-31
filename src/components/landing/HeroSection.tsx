@@ -1,35 +1,8 @@
-import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Truck, Check } from "lucide-react";
+import { Truck } from "lucide-react";
 import heroProduct from "@/assets/hero-product.png";
 
-const socialProofNames = [
-  "Maria S.",
-  "Ana Paula",
-  "Juliana M.",
-  "Fernanda C.",
-  "Camila R.",
-  "Beatriz L.",
-  "Carolina A.",
-  "Patrícia F.",
-];
-
 const HeroSection = () => {
-  const [currentNotification, setCurrentNotification] = useState(0);
-  const [showNotification, setShowNotification] = useState(true);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setShowNotification(false);
-      setTimeout(() => {
-        setCurrentNotification((prev) => (prev + 1) % socialProofNames.length);
-        setShowNotification(true);
-      }, 500);
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <section className="relative w-full min-h-[120vh] lg:min-h-screen bg-gradient-hero overflow-hidden">
       {/* Faixa de destaque superior - Frete Grátis */}
@@ -53,16 +26,19 @@ const HeroSection = () => {
         {/* Headline Principal */}
         <div className="text-center max-w-md lg:max-w-2xl mb-6 animate-fade-in-up">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight tracking-tight">
-            Está cansada de{" "}
-            <span className="text-primary">manchas</span> e{" "}
-            <span className="text-primary">acne</span>?
+            Sua pele{" "}
+            <span className="text-primary">Radiante</span> em até{" "}
+            <span className="text-primary">30 dias</span>.
           </h1>
         </div>
 
         {/* Subheadline */}
         <p className="text-center text-base md:text-lg text-foreground/80 max-w-sm lg:max-w-md mb-8 leading-relaxed animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
-          Transforme sua rotina de skincare em um tratamento de alta performance. 
-          Resultados visíveis com cuidado diário.
+          Sérum facial com{" "}
+          <span className="text-primary font-semibold">Ácido Hialurônico</span> e{" "}
+          <span className="text-primary font-semibold">Niacinamida</span>. 
+          Fórmula dermatológica de{" "}
+          <span className="text-primary font-semibold">alta performance</span>.
         </p>
 
         {/* Imagem do produto */}
@@ -88,29 +64,8 @@ const HeroSection = () => {
 
         {/* Texto de reforço */}
         <p className="text-center text-sm text-foreground/60 mt-6 max-w-xs animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
-          Pele visivelmente mais uniforme e hidratada
+          Resultados em até 30 dias
         </p>
-      </div>
-
-      {/* Notificação de prova social flutuante */}
-      <div
-        className={`fixed bottom-24 left-4 z-50 transition-all duration-500 ${
-          showNotification ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-full"
-        }`}
-      >
-        <div className="flex items-center gap-3 bg-green-light border border-secondary/20 rounded-xl px-4 py-3 shadow-lg max-w-[280px]">
-          <div className="flex-shrink-0 w-8 h-8 bg-secondary rounded-full flex items-center justify-center">
-            <Check className="w-4 h-4 text-secondary-foreground" />
-          </div>
-          <div className="flex flex-col">
-            <span className="text-sm font-semibold text-foreground">
-              {socialProofNames[currentNotification]}
-            </span>
-            <span className="text-xs text-foreground/70">
-              acabou de comprar
-            </span>
-          </div>
-        </div>
       </div>
     </section>
   );
