@@ -4,16 +4,16 @@ const Footer = () => {
   return (
     <footer className="bg-foreground text-card py-12">
       <div className="container">
-        {/* Guarantee Banner */}
+        {/* Free Shipping Banner */}
         <div className="bg-card/10 rounded-2xl p-6 mb-12 max-w-2xl mx-auto text-center">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Shield className="w-12 h-12 text-secondary" />
             <div className="text-left">
               <h3 className="text-xl font-bold text-card">
-                Satisfação Garantida
+                Frete Grátis para Todo o Brasil
               </h3>
               <p className="text-card/80">
-                Seu dinheiro de volta em até 7 dias se não ficar satisfeita
+                Receba seu sérum em casa sem pagar nada pelo envio
               </p>
             </div>
           </div>
