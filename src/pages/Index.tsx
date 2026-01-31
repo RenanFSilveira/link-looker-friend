@@ -6,30 +6,9 @@ import HowItWorks from "@/components/landing/HowItWorks";
 import Benefits from "@/components/landing/Benefits";
 import FAQ from "@/components/landing/FAQ";
 import Footer from "@/components/landing/Footer";
-import WhatsAppButton from "@/components/landing/WhatsAppButton";
 
 /**
  * Landing Page Bellawave - Versão B (Alta Conversão)
- * 
- * Estrutura AIDA Otimizada:
- * 1. Hero Section (Atenção + Ação Imediata) - Headline foca no BENEFÍCIO
- * 2. Trust Bar (Confiança)
- * 3. Preços (SUBIDOS PARA CIMA!) - De posição 9 para posição 3
- * 4. Prova Social (Resultados + Depoimentos)
- * 5. Como Funciona (Resumido em 3 cards)
- * 6. Benefícios Visuais
- * 7. Segunda Chamada de Preços
- * 8. FAQ
- * 9. Footer com Garantia
- * 
- * Mudanças principais do plano de ação:
- * ✅ Headline de DOR → BENEFÍCIO ("Pele radiante em 30 dias")
- * ✅ Prova social na hero ("+1.000 mulheres já experimentaram")
- * ✅ Preços na posição 3 (antes era posição 9)
- * ✅ Kit 60 dias destacado como "Mais Vendido"
- * ✅ Garantia visível próximo aos preços
- * ✅ Urgência/escassez ("Últimas unidades")
- * ✅ Seções reduzidas e mais objetivas
  */
 
 const Index = () => {
@@ -65,9 +44,6 @@ const Index = () => {
       
       {/* 9. Footer com Garantia */}
       <Footer />
-      
-      {/* WhatsApp Floating Button */}
-      <WhatsAppButton />
     </main>
   );
 };

@@ -102,7 +102,7 @@ const SocialProof = () => {
             className="bg-secondary hover:bg-green-dark text-secondary-foreground font-semibold text-lg px-8 py-6 shadow-cta"
             onClick={() => document.getElementById('precos')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            Quero esses resultados →
+            Quero esses resultados
           </Button>
         </div>
       </div>

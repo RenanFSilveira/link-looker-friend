@@ -1,10 +1,30 @@
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Truck } from "lucide-react";
 import heroProduct from "@/assets/hero-product.png";
 
+// Importação das logos
+import logo1 from "@/assets/logos/logo-1.png";
+import logo2 from "@/assets/logos/logo-2.png";
+import logo3 from "@/assets/logos/logo-3.png";
+import logo4 from "@/assets/logos/logo-4.png";
+
+const logos = [logo1, logo2, logo3, logo4];
+
 const HeroSection = () => {
+  const [currentLogoIndex, setCurrentLogoIndex] = useState(0);
+
+  // Script para rotacionar a logo a cada 1 segundo (1000ms)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentLogoIndex((prevIndex) => (prevIndex + 1) % logos.length);
+    }, 1500);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="relative w-full min-h-[120vh] lg:min-h-screen bg-gradient-hero overflow-hidden">
+    <section className="relative w-full min-h-svh lg:min-h-screen bg-gradient-hero overflow-hidden">
       {/* Faixa de destaque superior - Frete Grátis */}
       <div className="w-full bg-coral-dark py-3 px-4">
         <div className="flex items-center justify-center gap-2 text-primary-foreground">
@@ -16,11 +36,16 @@ const HeroSection = () => {
       </div>
 
       {/* Container principal */}
-      <div className="container flex flex-col items-center justify-start pt-8 pb-16 lg:pt-12 lg:pb-20">
-        {/* Logo */}
-        <div className="flex flex-col items-center mb-6 lg:mb-8">
-          <span className="text-lg font-normal text-foreground/80 tracking-wide">bella</span>
-          <span className="text-3xl font-bold text-foreground -mt-1 tracking-tight">wave.</span>
+      <div className="container flex flex-col items-center justify-start pt-8 pb-6 lg:pt-12 lg:pb-20">
+        
+        {/* LOGO DINÂMICA (Aumentada) */}
+        {/* w-48 no mobile (aprox 190px) e w-64 no desktop */}
+        <div className="flex flex-col items-center mb-8 lg:mb-10 h-20 justify-center">
+          <img 
+            src={logos[currentLogoIndex]} 
+            alt="Bellawave" 
+            className="w-72 md:w-96 h-auto object-contain transition-opacity duration-300"
+          />
         </div>
 
         {/* Headline Principal */}
@@ -62,10 +87,13 @@ const HeroSection = () => {
           Comprar agora
         </Button>
 
-        {/* Texto de reforço */}
-        <p className="text-center text-sm text-foreground/60 mt-6 max-w-xs animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
-          Resultados em até 30 dias
-        </p>
+        {/* Selo de Frete Grátis */}
+        <div 
+          className="mt-6 flex items-center gap-2 px-4 py-1.5 rounded-full border border-secondary text-secondary bg-transparent animate-fade-in-up"
+          style={{ animationDelay: "0.4s" }}
+        >
+          <span className="text-xs font-bold uppercase tracking-wide">Frete Grátis</span>
+        </div>
       </div>
     </section>
   );
