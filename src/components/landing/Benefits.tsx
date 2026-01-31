@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
+import benefitsModel from "@/assets/benefits-model.png";
 
 const benefits = [
   "Pele mais macia e luminosa",
@@ -18,9 +19,9 @@ const Benefits = () => {
           {/* Image */}
           <div className="flex justify-center">
             <img
-              src="https://bellawavederm.com.br/wp-content/uploads/2025/10/1-3.png"
-              alt="Sérum Facial Bellawave"
-              className="w-80 lg:w-96 drop-shadow-2xl animate-float"
+              src={benefitsModel}
+              alt="Modelo usando Sérum Facial Bellawave"
+              className="w-full max-w-md rounded-2xl shadow-card"
             />
           </div>
 
