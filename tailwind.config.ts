@@ -18,7 +18,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Poppins', 'sans-serif'],
+        sans: ['Mackay', 'Poppins', 'sans-serif'],
+        mackay: ['Mackay', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -63,9 +64,12 @@ export default {
         green: {
           DEFAULT: "hsl(var(--green))",
           dark: "hsl(var(--green-dark))",
+          light: "hsl(var(--green-light))",
         },
         orange: "hsl(var(--orange))",
         cream: "hsl(var(--cream))",
+        peach: "hsl(var(--peach))",
+        terracotta: "hsl(var(--terracotta))",
       },
       borderRadius: {
         lg: "var(--radius)",
